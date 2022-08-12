@@ -1,0 +1,45 @@
+<div class="card bg-primary bg-opacity-25 border border-5 border-white p-3 mb-3" style="width: 98%; max-height: 300px; height: 300px" style="background: none">
+
+
+    <div class="row d-flex justify-content-center ">
+        <div class="col-12 col-md-8 d-flex flex-column align-items-center justify-content-between p-2 ">
+            <p class="d-flex align-items-center ">
+                <!-- <img src="assets/images/logo.png" class="img-fluid img-responsive w-50 " alt="... "> -->
+                <img [src]="afficheImage(ligne.images[0].fichier)" class="img-fluid img-responsive w-50 " alt="... ">
+
+                <span class=" ms-3 lead fs-6 ">{{ligne.nom}}</span>
+            </p>
+
+            <p class="col-12 col-md-4 d-flex justify-content-between w-25 fs-2 align-items-center supprimer " (click)="removeProduct(ligne)">
+                <i class="bi bi-trash fs-1 "></i>
+            </p>
+        </div>
+        <div class="col-md-4 d-flex flex-column justify-content-between align-items-end ">
+
+            <h5 class="card-title fw-bold ">Quantité/Prix</h5>
+            <h4 class="lead fs-4  p-5">Unité {{ligne.prix |currency:"XOF":"symbol"}}</h4>
+
+            <div class="card-footer d-flex w-100 justify-content-between  rounded-3 bg-danger bg-opacity-10 ">
+                <div class="d-flex flex-column justify-content-between ">
+                    <small class="lead">Total</small>
+                    <small>{{(ligne.prix)*(ligne.quantite)}}</small>
+                </div>
+                <div class="d-flex flex-column  align-items-center justify-content-between">
+                    <!-- <form action="#" class=""> -->
+                    <input type="number" #inputQte class="text-center" (input)="changerPrix(ligne,inputQte.value);" name="" value="{{ligne.quantite}}" id="" style="width:70px">
+                    <!-- </form> -->
+                    <div class="d-flex justify-content-between  w-100  ">
+                        <button class="btn btn-warning btn-sm m-1" (click)="moins(ligne,inputQte);" [disabled]="+inputQte.value==1">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+
+                        <button class="btn btn-warning btn-sm m-1" (click)="plus(ligne,inputQte);changerPrix(ligne,inputQte.value)">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<nav class="navbar principal-color navbar-dark bg-dark position-sticky top-0 w-100 mb-5" style="height: 125px">
+    <a class="navbar-brand" routerLink="">
+        <img src="assets/images/logo1.png" class="img-responsive img-fluid " width="150" alt="" srcset="" />
+    </a>
+
+    <div class=" position-relative   ms-auto">
+        <a class=" " [routerLink]="['panier']">
+            <i class="bi bi-cart4 fs-2 w-100 h-100"></i>
+            <i class="fas fa-bell"></i>
+
+        </a>
+        <span class="count  text-white fw-bold fs-5 position-absolute top-75 start-75 ">
+            {{(items$|async).length}}
+        </span>
+    </div>
+
+
+    <button class="ms-5 me-2 navbar-toggler border border-3 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon text-dark ">
+
+        </span>
+    </button>
+
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="navbar-brand" routerLink="">
+
+                    <img src="assets/images/logo1.png" class="img-responsive img-fluid " width="150" alt="" srcset="" />
+                    <span class="navbar-text">Brazil Burger</span>
+                </a>
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="d-flex mt-5" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav justify-content-end flex-grow-1 px-1">
+                <li class="nav-item hover p-2">
+                    <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+                </li>
+                <!-- <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="clients">Clients</a>
+                </li> -->
+                <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="clients/23">Mes commandes(client)</a>
+                </li>
+                <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="panier">Mon Panier</a>
+                </li>
+                <li class="nav-item  p-2 bg-white">
+                    <hr class="divider ">
+                </li>
+                <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="admin">Admin</a>
+                </li>
+                <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="admin/commandes">Commandes des clients</a>
+                </li>
+                <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="admin/livraisons/new">Faire une Livraison de commandes</a>
+                </li>
+                <!-- <li class="nav-item hover p-2">
+                    <a class="nav-link" routerLink="admin/zones">Zones</a>
+                </li> -->
+
+
+            </ul>
+
+        </div>
+    </div>
+
+
+
+</nav>

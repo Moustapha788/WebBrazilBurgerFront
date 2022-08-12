@@ -1,0 +1,30 @@
+.right-side {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.addPanier:hover {
+    background-color: #f7f7f7;
+}
+
+.search-hero {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+
+input[type="number"] {
+    color: #fff;
+}
+
+.produits-similaires,
+.complements,
+.boissons {
+    overflow-y: hidden;
+    overflow-x: auto;
+    /* scrollbar-width: 1px!important; */
+}

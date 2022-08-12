@@ -1,0 +1,39 @@
+.card {
+    width: 400px;
+    max-height: 500px;
+}
+
+.card-header {
+    background: #d9d9d9;
+}
+
+.card-body {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+    background: #e4b610;
+    border: 4px solid #d9d9d9 !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    cursor: pointer;
+}
+
+.bcg-default {
+    background: #d9d9d9;
+}
+
+.bcg-change {
+    background: #d35400;
+    color: white!important;
+}
+
+.img-burger {
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.adding-to-cart {
+    cursor: pointer;
+}

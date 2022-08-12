@@ -1,0 +1,22 @@
+<div class="container text-center text-capitalize bg-warning p-3 fs-1 text-black fw-bold">
+    les clients qui ont au moins fait une commande dans notre app
+</div>
+
+<div class=" bg-gradient  border border-3 mt-3 p-3 row">
+
+
+    <table class="col  table table-hover d-flex flex-column justify-content-center ">
+        <thead>
+            <tr class="row bg-warning  py-2">
+                <th class="col-1 ">#</th>
+                <th class="col-1">prenom</th>
+                <th class="col-1">nom</th>
+                <th class="col-3">adresse</th>
+                <th class="col text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody class=" ">
+            <app-tr-client class="m-3 " *ngFor="let client of tableauDesClients;let i=index " [i]="i " [client]="client"></app-tr-client>
+        </tbody>
+    </table>
+</div>

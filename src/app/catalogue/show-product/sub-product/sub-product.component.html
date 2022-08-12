@@ -1,0 +1,14 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0 d-flex align-items-center p-2">
+        <div class="col-md-4">
+            <img [src]="afficheImage(subProduct.burger.images[0].fichier)" class="img-fluid img-responsive rounded-start" alt="image-burger">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body bg">
+                <h5 class="card-title text-dark fs-5"> {{subProduct.burger.nom}}</h5>
+                <p class="card-text fs-4"><small class="text-muted">{{subProduct.burger.prix}} FCFA</small></p>
+                <p class="card-text fs-4"><small class="text-muted">{{subProduct.quantite  }} Unité{{subProduct.quantite>1?'s':"" }} </small></p>
+            </div>
+        </div>
+    </div>
+</div>

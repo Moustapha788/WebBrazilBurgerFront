@@ -1,0 +1,18 @@
+<tr class="table-dark row table-hover">
+    <td class="col-1">{{i+1}}</td>
+    <td class="col-2">{{statut(commande)}}</td>
+    <td class="col-1">{{commande.prixTotal|currency:"XOF"}}</td>
+    <td class="col-1">{{commande.registrationDate |date:'le dd MM YYYY à hh : mm'}}</td>
+    <td class="col-2">{{afficheZone(commande)}}</td>
+    <td class="col-2 "><a class="text-decoration-none" routerLink="../clients/{{commande.client.id}}">{{commande.client.email}}</a></td>
+    <td class="col-2  d-flex flex-row">
+        <button class="btn btn-info mx-1 text-dark fw-bold" (click)="detail(commande)">
+            Detail
+        </button>
+        <button class="btn   mx-1 text-dark fw-bold" [ngClass]="{bcgAnnule:colorRouge,bcgValide:colorValider,bcgLivrer:colorLivrer,bcgTermine:colorTerminer}" [disabled]="disableAnnuler(commande)" #btnAction (click)="action(commande)">
+            {{textButton}}
+        </button>
+        <input type="checkbox" value="{{commande.id}}">
+    </td>
+
+</tr>

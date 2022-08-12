@@ -1,0 +1,16 @@
+<div class="container  text-center text-capitalize p-3 text-dark  fw-bold">
+    <h1>Détail </h1>
+    <div class="container">
+        <div class=" bg-info bg-opacity-25 mb-3 p-3 border border-2 border-white p-2 position-relative" *ngFor="let commande of client.commandes">
+            <button class="position-absolute end-0 me-2   btn btn-danger" [disabled]="disableAnnuler(commande)" (click)="annuler(commande)">Annuler</button>
+            <app-statut-cmd-left class="col-12  m-5" [commande]="commande"></app-statut-cmd-left>
+            <div class="d-flex justify-content-between les-details py-3 border-top border-5 ">
+                <app-statut-cmd-right *ngFor="let produit of commande.Produits" [produitCmde]="produit" class="col-6  mx-2"></app-statut-cmd-right>
+            </div>
+        </div>
+    </div>
+    <div [hidden]="!notification" class="alert alert-dismissible alert-success bg-opacity-10 position-fixed bottom-0 end-0 ">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>succés</strong> Votre commande a bien réussi
+    </div>
+</div>

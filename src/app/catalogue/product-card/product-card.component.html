@@ -1,0 +1,21 @@
+<!-- animate__heartBeat -->
+<div class="card rounded-4     ">
+    <h3 class="card-header text-black d-flex align-items-center justify-content-between px-4 fs-2">
+        <span class=" fw-bold fs-5 ">{{produit.prix}} FCFA</span>
+        <div class="adding-to-cart " (click)="basketPutting(produit)" *ngIf="!isMenu(produit)">
+            <i class="bi bi-cart4 fs-2 w-100 h-100 text-dark " *ngIf="showButton(produit)"></i>
+            <!-- <i class="bi bi-x-lg w-100 h-100 text-danger  " *ngIf="!disabled "></i> -->
+            <i class="fa-solid fa-cart-plus h-100 text-warning" *ngIf="!showButton(produit)"></i>
+        </div>
+    </h3>
+    <div class="card-body p-2 border d-block justify-content-center align-items-center {{bcgFooter}}" (click)="show() ">
+
+        <img [src]="afficheImage(produit.images[0].fichier)" class="img-responsive img-burger " alt="ceci est un {{isMenu(produit)?'menu':'burger'}} " class="card-img " style="max-width:100%; height:100%; ">
+    </div>
+
+    <div class="card-footer text-black lead p-2  {{bcgFooter(produit)}} ">
+        <marquee behavior="" direction="left">
+            <span class=" fs-6 fw-lighter lead ">{{produit.nom}}</span>
+        </marquee>
+    </div>
+</div>

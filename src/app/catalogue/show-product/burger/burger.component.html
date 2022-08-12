@@ -1,0 +1,13 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0 d-flex align-items-center p-2">
+        <div class="col-md-4" style="height: 200px; max-height: 200px;">
+            <img [src]="afficheImage(burger.images[0].fichier)" class="img-fluid rounded-start img-responsive w-100 h-100" alt="image-burger">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body bg">
+                <h5 class="card-title text-dark fs-4"> {{burger.nom}}</h5>
+                <p class="card-text fs-4"><small class="text-muted">{{burger.prix}} FCFA</small></p>
+            </div>
+        </div>
+    </div>
+</div>

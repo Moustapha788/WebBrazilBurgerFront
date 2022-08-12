@@ -1,0 +1,20 @@
+<table class="table table-hover ">
+    <tbody>
+        <tr class=" d-flex justify-content-between ">
+            <th scope="col ">N°</th>
+            <td class="fs-2">{{commande.id}}</td>
+        </tr>
+        <tr class="d-flex justify-content-between ">
+            <th scope="col ">Prix Total de la commande</th>
+            <td class="fs-2">{{commande.prixTotal |currency:"XOF"}}</td>
+        </tr>
+        <tr class="d-flex justify-content-between ">
+            <th scope="col ">Date de la commande</th>
+            <td class="fs-2">{{commande.registrationDate|date:'le d MMMM yyyy à HH:mm, '}}</td>
+        </tr>
+        <tr class="d-flex justify-content-between ">
+            <th scope="col ">Statut de la commande</th>
+            <td class="fs-2 bg-body">{{statut(commande)}}</td>
+        </tr>
+    </tbody>
+</table>

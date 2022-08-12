@@ -1,0 +1,26 @@
+<div class=" card   border d-flex flex-column  align-items-center p-2" style="height: 300px; width: 300px">
+    <figure class="figure h-50">
+        <!-- <img src="assets/images/logo1.png" class="img-responsive img-fluid h-100" alt=""> -->
+        <img [src]="afficheImage(complement.images[0].fichier)" class="img-fluid img-responsive h-100 " alt="... ">
+
+    </figure>
+    <div class="d-flex justify-content-between align-items-center p-1 my-1 h-25 bg-primary bg-opacity-10 w-100">
+        <span class="block">{{complement.nom}}</span>
+        <span class="block">{{complement.prix|currency:"XOF"}}</span>
+        <!-- <span class="block" *ngIf="isBoisson(complement)">{{complement.tailleStock[0].quantiteStock}}</span> -->
+
+    </div>
+    <div class="d-flex flex-column  align-items-center justify-content-between h-25">
+
+        <div class="d-flex justify-content-between  w-100  ">
+            <small class="btn btn-warning btn-sm m-1" (click)="moins(complement,inputQte);">
+                <i class="fa-solid fa-minus"></i>
+            </small>
+            <input type="number" #inputQte class="text-center" (input)="changerPrix(complement,inputQte.value);" name="" value="{{complement.quantite}}" id="" style="width:70px">
+
+            <small class="btn btn-warning btn-sm m-1" (click)="plus(complement,inputQte);changerPrix(complement,inputQte.value)">
+                <i class="fa-solid fa-plus"></i>
+            </small>
+        </div>
+    </div>
+</div>

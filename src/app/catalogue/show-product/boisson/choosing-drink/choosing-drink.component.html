@@ -1,0 +1,23 @@
+<div class="  d-flex flex-column justify-content-center align-items-center border border-3  p-5 mx-2" [ngClass]="{choisi:choosen()}" style="width: 200px ;height: 200px;">
+    <label for="{{'boisson'+''}}">
+        <img [src]="afficheImage(drink.boisson.images[0].fichier)"
+            class="img-fluid rounded-start img-responsive w-100 h-100" alt="image-burger">
+    </label>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+
+        <small class=" d-block  text-center text-primary"> {{ drink.boisson.nom}}</small>
+        <small class="  card-text fs-6 text-center"><small class="text-muted">{{drink.prix}} FCFA</small></small>
+        <div class=" d-flex justify-content-center align-items-center">
+            <button class="btn btn-warning btn-sm m-1" (click)="moins(drink.boisson,k);" [disabled]="quantite==0">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+
+            <span class="bg-warning p-2 m-1">{{quantite}}</span>
+
+            <button class="btn btn-warning btn-sm m-1" (click)="plus(drink.boisson,k);" [disabled]="maxAtteint(k)">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <!-- <small class=" d-block  text-center"><span class="text-black">stock</span>: {{ drink.quantiteStock}}</small> -->
+    </div>
+</div>

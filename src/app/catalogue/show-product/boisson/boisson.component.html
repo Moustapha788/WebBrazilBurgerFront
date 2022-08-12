@@ -1,0 +1,13 @@
+<div class=" card my-2 py-3 d-flex flex-column justify-content-around " style="max-width: 600px; height: 400px; ">
+
+    <h5 class="card-title text-dark text-center fs-4 p-2">Veillez choisir <sup class="text-primary">
+            {{boissons.quantite}}</sup> boissons dans le modèle
+        <sup class="text-primary">{{boissons.drinkSize.modele}} </sup>
+    </h5>
+    <h3 class="bg-primary text-center w-50"> {{(restant(j).qteTotal-restant(j).qteChoisis)+"/"+restant(j).qteTotal}} </h3>
+    <div class="d-flex boissons pb-3">
+        <app-choosing-drink *ngFor="let drink of boissons.drinkSize.boissons" [k]="j" [drink]="drink">
+        </app-choosing-drink>
+    </div>
+
+</div>

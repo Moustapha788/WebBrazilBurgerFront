@@ -1,0 +1,27 @@
+.landing {
+    background: linear-gradient(rgba(0, 0, 0, 0.372), rgba(0, 0, 0, 0.372)), url(../../assets/images/burgers/burger-6.jpg);
+    background-size: cover;
+    /* animation: anime animate__lightSpeedInRight;
+    animation-duration: 2s; */
+}
+
+
+/* @keyframes anime {
+
+} */
+
+.my-element {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.ombre {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.617);
+}
+
+.call {
+    /* font-family: 'Inspiration', cursive; */
+    font-family: 'Square Peg', cursive;
+}

@@ -1,0 +1,35 @@
+.bckground {
+    background: linear-gradient(rgba(0, 0, 0, 0.688), rgba(0, 0, 0, 0.394)), url("../../assets/images/burgers/burger-6.jpg") no-repeat!important;
+    background-size: cover;
+}
+
+
+/* .left-section {} */
+
+.btn-commande:hover {
+    background: #27BB27;
+    border-color: #27BB27!important;
+}
+
+.btn-commande:active {
+    background: greenyellow;
+}
+
+.right-section {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 760px;
+    max-height: 760px;
+}
+
+select {
+    outline: none!important;
+}
+
+.produits-similaires,
+.complements,
+.boissons {
+    overflow-y: hidden;
+    overflow-x: auto;
+    /* scrollbar-width: 1px!important; */
+}

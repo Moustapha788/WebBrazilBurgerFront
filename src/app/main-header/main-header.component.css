@@ -1,0 +1,17 @@
+.principal-color {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.39)), #e4b610 !important;
+}
+
+
+/* .main-header {} */
+
+nav {
+    z-index: 100000 !important;
+}
+
+
+/* .count {} */
+
+.hover:hover {
+    background: crimson;
+}

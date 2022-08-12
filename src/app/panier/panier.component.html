@@ -1,0 +1,107 @@
+<div class="container-fluid mt-0 p-5  text-white bckground d-flex flex-column  justify-content-center align-items-center" style=" height: 760px;  max-height: 760px;">
+    <div class=" row p-3 border border-1 pt-2 mt-3 w-100" style="max-height:680px; height:95%;">
+        <section class="  left-section col col-sm-6 col-md-6 col-lg-6 p-5 row overflow-auto w-50 bg-warning bg-opacity-10 py-3 border-bottom border-2 border-warning" style="max-height:780px; height:100%;">
+            <div *ngIf="getPrixCommande()==0" class="bg-black bg-opacity-25 text-center  h-25 p-3">
+                <p class=" bg-warning text-primary fs-3">Votre Panier est vide cliquez sur ce bouton pour ajouter des produits
+                </p>
+                <a class="btn btn-success" href="#burgers">ajouter un produit</a>
+            </div>
+
+            <app-ligne-panier *ngFor="let item of items$ | async; let i = index" [ligne]="item">
+
+            </app-ligne-panier>
+
+        </section>
+
+        <section class="col col-sm-6 col-md-6 col-lg-6 p-4  right-section h-100">
+            <div class="container d-flex flex-column justify-content-between align-items-center">
+                <div class="bg-warning fw-bold fs-5 p-3 text-center mb-3">
+                    TOTAL COMMANDE SANS LIVRAISON
+                </div>
+
+                <div class="border border-5 p-3 border-white text-center fs-4 w-50 mb-5">
+                    {{ getPrixCommande() | currency:"XOF" }}
+                </div>
+
+                <div class="w-100">
+
+                    <div class="w-100">
+                        <div class="">
+                            <div class="bg-warning fw-bold fs-3 px-5 border-bottom border-1 border-white w-100  text-center mb-0 d-flex justify-content-between">
+                                <label for="rep1">
+                                <span>À emporter</span>
+                            </label>
+                                <div class="d-flex align-items-center">
+                                    <input type="radio" #emporter class="" (input)="estAEmporter(emporter)" name="modeLivraison" id="rep1" style="width: 25px ; height: 25px;" />
+                                </div>
+                            </div>
+                            <div class="bg-warning fw-bold fs-3 px-5 w-100  text-center mb-0 d-flex justify-content-between">
+                                <label for="rep">
+                                <span> À livrer</span>
+                            </label>
+                                <div class="d-flex align-items-center">
+                                    <input type="radio" #livrable class="" name="modeLivraison" id="rep" (input)="estALivrer(livrable)" style="width: 25px ; height: 25px;" />
+                                </div>
+                            </div>
+                            <div class="accordion" id="accordionExample" [ngStyle]="{display:checkedLivrable(livrable)}">
+                                <div class="accordion-item">
+                                    <div class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        Choisir votre point de livraison
+                                    </div>
+                                    <div id="collapseOne" class="accordion-collapse collapse show">
+                                        <div class=" bg-white  py-0">
+                                            <select #selection class="form-select rounded-0 " (input)="isZoneSelected(selection)">
+                                            <option hidden value="" selected disabled>-- Veillez selectionnez une zone --</option>
+                                            <optgroup *ngFor="let zone of zones;"
+                                                label="{{''+(zone.nom|uppercase)+ ' ----------- Prix Livraison: '+(zone.fraisLivraison)}}"
+                                                class="form-label">
+                                                <option value="{{zone.id}}" *ngFor="let quartier of zone.quartiers">
+                                                    {{quartier.nomQuartier}}</option>
+                                            </optgroup>
+                                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex w-100 mt-3 ">
+                        <div class="bg-warning fw-bold fs-4 p-3 text-center mb-3 ">
+                            TOTAL COMMANDE
+                        </div>
+                        <div class="border border-5 p-3 border-white text-center fs-3 w-50 mb-3 ">
+                            {{ (getPrixCommande()+getDeliveryPrice(livrable, selection) )| currency:"XOF" }}
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div class="m-3 ">
+        <button class=" btn btn-commande bg-none border border-5 rounded-3 text-white fs-1 py-2 px-5 " (click)="commander(idZoneSelectionne(selection),selection) " [disabled]="nePeutCommander(emporter,selection) ">
+            Commander
+        </button>
+    </div>
+</div>
+
+
+<!-- nota bene: Complements frites  -->
+<div class="   bg-black bg-opacity-10  border-top  border-warning border-5 d-flex flex-column justify-content-between my-5 pt-4 pb-3" style="height: 500px;">
+    <h1 class="container text-center" id="Frites">Frites</h1>
+    <div class="d-flex  complements flex-row py-3 list-group">
+        <app-complement class="mx-2 list-group-item  border border-2" *ngFor="let complement of tabFritesComplement" [complement]="complement"></app-complement>
+    </div>
+</div>
+
+
+<!-- nota bene: Complements boissons  -->
+<div class="   bg-black bg-opacity-10 border-top border-warning border-5 d-flex flex-column justify-content-between my-5 pt-4 pb-3" style="height: 500px;">
+    <h1 class="container text-center" id="Boissons">Boissons</h1>
+    <div class="d-flex  complements flex-row py-3 list-group">
+        <app-complement class="mx-2 list-group-item   border border-2" *ngFor="let complement of tabBoissonsComplement" [complement]="complement"></app-complement>
+    </div>
+</div>

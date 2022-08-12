@@ -1,0 +1,24 @@
+<table class="table table-hover bg-warning ">
+
+    <thead class="thead" style="min-height:200px; max-height: 200px;">
+        <tr class="h-100">
+            <td class="h-100">
+                <img [src]="afficheImage(produitCmde.produit.images[0].fichier)" class="img-fluid img-responsive w-50 h-100 " alt="... ">
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="d-flex justify-content-between ">
+            <th scope="col ">Nom du produit</th>
+            <td class="text-primary">{{produitCmde.produit.nom}}</td>
+        </tr>
+        <tr class=" d-flex justify-content-between ">
+            <th scope="col ">Quantité commandée</th>
+            <td class="text-primary">{{produitCmde.quantite}}</td>
+        </tr>
+        <tr class="d-flex justify-content-between ">
+            <th scope="col ">Prix du produit</th>
+            <td class="text-primary">{{produitCmde.produit.prix |currency:"XOF" }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<a class="card m-5 text-decoration-none" (click)="detailOfSimilar(similarProduct)">
+    <div class="movie-image">
+        <!-- <img src="assets/images/logo1.png"> -->
+        <img [src]="afficheImage(similarProduct.images[0].fichier)" class="img-responsive img-burger " alt="ceci est un menu ou un burger" class="card-img " style="max-width:100%; height:100%; ">
+
+    </div>
+    <div class="movie-info">
+        <h2>{{similarProduct.nom}}</h2>
+        <small class="top p-1">{{similarProduct.prix |currency:"XOF"}}</small>
+    </div>
+    <div class="overview">
+        <h1 class="text-black">Description</h1>
+        <p class="text-black">Des Menus et des burgers 100% africains qui vous sont proposés pour votre régal</p>
+    </div>
+</a>

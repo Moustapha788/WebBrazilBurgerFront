@@ -1,0 +1,11 @@
+<tr class="table-dark row">
+    <td class="col-1">{{i+1}}</td>
+    <td class="col-1">{{client.prenom}}</td>
+    <td class="col-1">{{client.nom}}</td>
+    <td class="col-3">{{client.adresse}}</td>
+    <td class="col d-flex ">
+        <button class="btn btn-info mx-1 text-dark fw-bold" (click)="detail(client)">
+            <a  class="text-decoration-none text-dark">Detail</a>
+        </button>
+    </td>
+</tr>
